@@ -12,8 +12,12 @@ Signal.trap(:INT){
   exit 0
 }
 
-config = ARGV.size > 0 ? YAML.load_file(File.expand_path(ARGV[0])) :
-  YAML.load_file(File.expand_path('../sample.yml', __FILE__))
+unless ARGV.size > 0
+  puts "usage: pingman sample.yml"
+  exit 1
+end
+
+config = YAML.load_file(File.expand_path(ARGV[0]))
 
 resolv = Resolv::DNS.new
 lines = []
