@@ -2,7 +2,7 @@ require 'net/ping'
 
 class Pinger
   def initialize
-    pe = Net::Ping::External.new('localhost')
+    pe = Net::Ping::External.new 'localhost'
     pe.timeout = 2
     pe.ping
     pe.ping
