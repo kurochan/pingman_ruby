@@ -1,0 +1,9 @@
+localhost:
+  host: localhost
+google:
+  host: google.com
+google-dns1:
+  host: 8.8.8.8
+google-dns2:
+  name: google-dns
+  host: 8.8.4.4
